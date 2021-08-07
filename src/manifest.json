@@ -78,14 +78,14 @@
 				{
 					"pattern": "",
 					"name": "list",
-					"target": "list"
+					"target": "serviceList"
 				}
 			],
 			"targets": {
-				"list": {
-					"viewId": "list",
-					"viewName": "list",
-                    "viewPath": "ui5.typescript.presentation.list"
+				"serviceList": {
+					"viewId": "service-list",
+					"viewName": "service-list",
+                    "viewPath": "ui5.typescript.presentation.service-list"
 				}
 			}
 		}
