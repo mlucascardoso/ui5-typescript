@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "com.vaees.eva-ui5-confirmacao-servico",
+		"id": "ui5-typescript",
 		"type": "application",
 		"i18n": "helpers/i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -39,7 +39,7 @@
 		},
 		"rootView": {
 			"id": "app",
-			"viewName": "com.vaees.eva-ui5-confirmacao-servico.components.app.app",
+			"viewName": "ui5-typescript.components.app.app",
 			"type": "XML",
 			"async": true
 		},
@@ -61,7 +61,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "com.vaees.eva-ui5-confirmacao-servico.helpers.i18n.i18n"
+					"bundleName": "ui5-typescript.helpers.i18n.i18n"
 				}
 			}
 		},
@@ -70,7 +70,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
                 "async": true,
-				"viewPath": "com.vaees.eva-ui5-confirmacao-servico.components",
+				"viewPath": "ui5-typescript.components",
 				"controlAggregation": "pages",
 				"controlId": "app"
 			},
