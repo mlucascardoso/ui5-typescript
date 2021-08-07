@@ -39,7 +39,7 @@
 		},
 		"rootView": {
 			"id": "app",
-			"viewName": "ui5.typescript.components.app.app",
+			"viewName": "ui5.typescript.presentation.app.app",
 			"type": "XML",
 			"async": true
 		},
@@ -70,7 +70,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
                 "async": true,
-				"viewPath": "ui5.typescript.components",
+				"viewPath": "ui5.typescript.presentation",
 				"controlAggregation": "pages",
 				"controlId": "app"
 			},
@@ -85,7 +85,7 @@
 				"list": {
 					"viewId": "list",
 					"viewName": "list",
-                    "viewPath": "ui5.typescript.components.list"
+                    "viewPath": "ui5.typescript.presentation.list"
 				}
 			}
 		}

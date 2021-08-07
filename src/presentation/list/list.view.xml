@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="ui5.typescript.components.list.list"
+    controllerName="ui5.typescript.presentation.list.list"
 	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
