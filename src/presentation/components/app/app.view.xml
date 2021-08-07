@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="ui5.typescript.presentation.app.app"
+	controllerName="ui5.typescript.presentation.components.app.app"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
