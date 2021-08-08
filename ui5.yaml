@@ -1,4 +1,4 @@
-specVersion: "2.0"
+specVersion: "2.5"
 metadata:
   name: ui5.typescript
 type: application
@@ -26,3 +26,29 @@ server:
       extraExts: "xml,json,properties"
       port: 35729
       path: "webapp"
+builder:
+  customTasks:
+    - name: ui5-task-copy-shim-resources
+      afterTask: replaceVersion
+      configuration:
+        enabled: true
+        debug: true
+        globs:
+          - "/resources/moment.js"
+---
+specVersion: '2.1'
+kind: extension
+type: project-shim
+metadata:
+  name: thirdparty # this can be your project shim name
+shims:
+  configurations:
+    moment: # name as defined in package.json
+      specVersion: '2.1'
+      type: module # Use module type
+      metadata:
+        name: moment
+      resources:
+        configuration:
+          paths:
+            /resources/: ''  # location where modules are stored
