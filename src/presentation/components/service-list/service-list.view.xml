@@ -7,7 +7,7 @@
 >
 	<semantic:MasterPage
         showFooter="true"
-        title="cuka"
+        title="{i18n>appointments}"
     >
         <semantic:content>
             <List
@@ -16,7 +16,6 @@
                 class="sapFDynamicPageAlignContent"
                 mode="SingleSelectMaster"
                 growing="true"
-                growingScrolltoLoad="true"
                 items="[]"
             >
                 <headerToolbar>
@@ -24,8 +23,8 @@
                         <SearchField
                             id="service-list-search-input"
                             showRefreshButton="true"
-                            tooltip="pica"
-                            placeholder="cica"
+                            tooltip="{i18n>searchAppointmentTooltip}"
+                            placeholder="{i18n>searchAppointment}"
                             width="100%"
                             search="handleSearch"
                         >
@@ -63,7 +62,7 @@
             </List>
         </semantic:content>
         <semantic:addAction>
-            <semantic:AddAction press="handleAdd"/>
+            <semantic:AddAction press="handleAdd" tooltip="{i18n>add}"/>
         </semantic:addAction>
 	</semantic:MasterPage>
 </mvc:View>
