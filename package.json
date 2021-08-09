@@ -7,7 +7,7 @@
         "build": "npm-run-all build:ts build:ui5",
         "build:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files",
         "build:ui5": "ui5 build --clean-dest",
-        "watch:ts": "npm run build:ts -- --watch",
+        "watch:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files --watch",
         "dev": "npm-run-all --parallel watch:ts dev:ui5",
         "dev:ui5": "ui5 serve --accept-remote-connections -o index.html"
     },
