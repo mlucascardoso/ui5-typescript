@@ -1,0 +1,83 @@
+<mvc:View 
+    controllerName="ui5.typescript.presentation.components.service-list.table.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:f="sap.f"
+>
+    <Table id="invoice-adjusment-table" items="{ path: '/CV_DIVERGENCE_ADJUSTMENT_PANEL_LIST' }" mode="MultiSelect" fixedLayout="false">
+        <headerToolbar>
+            <OverflowToolbar>
+                <Title text="{i18n>requiredAdjustments}" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://user-edit" type="Ghost" press="reassign" text="{i18n>reassign}" />
+                <Button icon="sap-icon://accept" type="Accept" press="confirm" text="{i18n>adjusted}" />
+                <Button icon="sap-icon://decline" type="Reject" press="reject" text="{i18n>rejected}" />
+                <Button icon="sap-icon://table-column" press="exportCsv" text="{i18n>export}" />
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="{i18n>supplier}"/>
+            </Column>
+            <Column minScreenWidth="Desktop" demandPopin="true">
+                <Text text="{i18n>invoiceAbrev}" />
+            </Column>
+            <Column minScreenWidth="Desktop" demandPopin="true">
+                <Text text="{i18n>itemAbrev}" />
+            </Column>
+            <Column minScreenWidth="Desktop" demandPopin="true">
+                <Text text="{i18n>purchaseOrder}" />
+            </Column>
+            <Column minScreenWidth="Desktop" demandPopin="true">
+                <Text text="{i18n>purchaseOrderItemAbrev}" />
+            </Column>
+            <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>statusCarrierAbrev}" maxLines="1" />
+            </Column>
+            <Column minScreenWidth="Desktop" demandPopin="true">
+                <Text text="{i18n>assignedBy}" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>assignedOn}" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <Text text="{i18n>adjustment}" />
+            </Column>
+            <Column hAlign="Center">
+                <Text text="{i18n>pdfDanfe}" maxLines="1"/>
+            </Column>
+            <Column>
+                <Text text="{i18n>logs}" maxLines="1"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{supplierName} ({ path: 'supplierId', formatter: '.removeLeftZerosFormatter.format' })" maxLines="2"/>
+                    <Text text="{ path: 'nfNumber', formatter: '.removeLeftZerosFormatter.format' }" maxLines="1" />
+                    <Text text="{path: 'nfItem', formatter: '.removeLeftZerosFormatter.format'}" maxLines="1" />
+                    <Text text="{poNumber}" maxLines="1"/>
+                    <Text text="{path: 'poItem', formatter: '.removeLeftZerosFormatter.format'}" maxLines="1" />
+                    <!--<Text text="{materialDescription}" />-->
+                    <ObjectStatus class="nom-wrappable-white-space" text="{ parts: [{ path: 'statusCarrier' }, { value: 'text' }], formatter: '.translateCarrierStatus' }" state="{ parts: [{ path: 'statusCarrier' }, { value: 'state' }], formatter: '.translateCarrierStatus' }" icon="{ parts: [{ path: 'statusCarrier' }, { value: 'icon' }], formatter: '.translateCarrierStatus' }"/>
+                    <Text text="{assignedBy}" maxLines="1"/>
+                    <Text text="{
+                            path: 'assignedOn',
+                            type: 'sap.ui.model.type.DateTime',
+                            formatOptions: {
+                                style: 'short',
+                                source: {
+                                    pattern: 'yyyy-MM-dd HH:mm:ss'
+                                }
+                            }
+                        }" maxLines="2" />
+                    <Text text="{actionDescription}" />
+                    <Button icon="sap-icon://pdf-attachment" tooltip="{i18n>downloadPdfButton}" press="openPdf"/>
+                    <Button icon="sap-icon://display" tooltip="{i18n>openLogsButton}" press="handleLogsDialogOpen"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>

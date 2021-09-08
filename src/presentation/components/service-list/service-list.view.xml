@@ -1,68 +1,21 @@
-<mvc:View
+<mvc:View 
     controllerName="ui5.typescript.presentation.components.service-list.service-list"
-	height="100%"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.m.semantic"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:f="sap.f"
 >
-	<semantic:MasterPage
-        showFooter="true"
-        title="{i18n>appointments}"
-    >
-        <semantic:content>
-            <List
-                id="service-list"
-                width="auto"
-                class="sapFDynamicPageAlignContent"
-                mode="SingleSelectMaster"
-                growing="true"
-                items="[]"
-            >
-                <headerToolbar>
-                    <OverflowToolbar>
-                        <SearchField
-                            id="service-list-search-input"
-                            showRefreshButton="true"
-                            tooltip="{i18n>searchAppointmentTooltip}"
-                            placeholder="{i18n>searchAppointment}"
-                            width="100%"
-                            search="handleSearch"
-                        >
-                            <layoutData>
-                                <OverflowToolbarLayoutData
-                                    minWidth="150px"
-                                    maxWidth="340px"
-                                    shrinkable="true"
-                                    priority="NeverOverflow"
-                                />
-                            </layoutData>
-                        </SearchField>
-                    </OverflowToolbar>
-                </headerToolbar>
-                <items>
-                    <ObjectListItem
-                        type="Inactive"
-                        title="1234567"
-                    >
-                        <firstStatus>
-                            <ObjectStatus
-                                text="statuszinho"
-                                state="Success"
-                                class="noWrap"
-                            />
-                        </firstStatus>
-                        <attributes>
-                            <ObjectAttribute 
-                                title="atributozinho"
-                                text="texto do atributozinho"
-                            />
-                        </attributes>
-                    </ObjectListItem>
-                </items>
-            </List>
-        </semantic:content>
-        <semantic:addAction>
-            <semantic:AddAction press="handleAdd" tooltip="{i18n>add}"/>
-        </semantic:addAction>
-	</semantic:MasterPage>
+    <f:DynamicPage>
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="{i18n>divergenceAdjustment}"/>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <mvc:XMLView viewName="ui5.typescript.presentation.components.service-list.table.table"></mvc:XMLView>
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>

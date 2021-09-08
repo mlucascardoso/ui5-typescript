@@ -1,8 +1,12 @@
 import Controller from 'sap/ui/core/mvc/Controller';
-import moment from 'moment';
 
 export default class ServiceListController extends Controller {
     public onInit(): void {
-        console.log(moment().format('DD-YYYY'));
+        const eventBus = this.getOwnerComponent().getEventBus();
+        eventBus.subscribe('table', 'reassign', this.reassign, this);
+    }
+
+    reassign(viewName: string, eventId: string, data: any) {
+        alert(data.message);
     }
 }
